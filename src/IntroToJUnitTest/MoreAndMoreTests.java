@@ -73,23 +73,34 @@ public class MoreAndMoreTests {
 			if (i * i == number) {
 				return true;
 			}
-			
+
 		}
 		return false;
 
 	}
 
-	// @Test
-	// public void CubeTest() {
-	//
-	// assertTrue(isCube(27));
-	// assertTrue(isCube(216));
-	// assertTrue(isCube(729));
-	// assertTrue(isCube(1));
-	// assertFalse(isCube(3));
-	// assertFalse(isCube(22));
-	// assertFalse(isCube(143));
-	//
-	// }
+	@Test
+	public void CubeTest() {
+
+		assertTrue(isCube(27));
+		assertTrue(isCube(216));
+		assertTrue(isCube(729));
+		assertTrue(isCube(1));
+		assertFalse(isCube(3));
+		assertFalse(isCube(22));
+		assertFalse(isCube(143));
+
+	}
+
+	boolean isCube(int number) {
+		for (int i = 0; i <= number; i++) {
+			if (i * i * i == number) {
+				return true;
+			}
+
+		}
+		return false;
+
+	}
 
 }
