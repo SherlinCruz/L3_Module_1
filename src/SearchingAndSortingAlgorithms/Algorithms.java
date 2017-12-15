@@ -35,21 +35,59 @@ public class Algorithms {
 		return 0;
 	}
 
-	public static Double findTallest(List<Double> peeps) {
-		{
-			Double s = 0.0;
+	public static Double findTallest(List<Double> heights) {
 
-			for (int i = 0; i < peeps.size(); i++) {
-				Double r;
-				if (peeps.get(i) > s) {
-					r = peeps.get(i);
+		Double tallest = 0.0;
 
-				}
-				return r;
+		for (Double height : heights) {
+			if (height > tallest) {
+				tallest = height;
+			}
+		}
+
+		return tallest;
+
+	}
+
+	public static String findLongestWord(List<String> words) {
+		String longest = "";
+
+		for (String word : words) {
+
+			if (word.length() > longest.length()) {
+
+				longest = word;
 			}
 
 		}
-		return i;
+		return longest;
+	}
+
+	public static boolean containsSOS(List<String> messages) {
+
+		for (String message : messages) {
+
+			if (message.contains("... --- ...")) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	public static List<Double> sortScores(List<Double> scores) {
+
+		Double ordering = 0.0;
+
+		for (Double score : scores) {
+
+			if (score > ordering) {
+
+			}
+
+		}
+
+		return null;
 	}
 
 	// Add other methods here
