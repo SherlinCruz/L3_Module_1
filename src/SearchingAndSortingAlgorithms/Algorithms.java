@@ -2,6 +2,8 @@ package SearchingAndSortingAlgorithms;
 
 import java.util.List;
 
+import org.junit.runner.Result;
+
 public class Algorithms {
 	public static int findBrokenEgg(List<String> eggs) {
 
@@ -79,15 +81,23 @@ public class Algorithms {
 
 		Double ordering = 0.0;
 
-		for (Double score : scores) {
+		for (int i = 0; i < scores.size(); i++) {
+			for (int j = i + 1; j < scores.size(); j++) {
 
-			if (score > ordering) {
+				if (scores.get(i) > scores.get(j)) {
+
+					ordering = scores.get(i);
+
+					scores.set(i, scores.get(j));
+
+					scores.set(j, ordering);
+
+				}
 
 			}
-
 		}
+		return scores;
 
-		return null;
 	}
 
 	// Add other methods here
