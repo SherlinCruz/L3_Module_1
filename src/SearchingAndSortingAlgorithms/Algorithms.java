@@ -83,7 +83,6 @@ public class Algorithms {
 
 		for (int i = 0; i < scores.size(); i++) {
 			for (int j = i + 1; j < scores.size(); j++) {
-
 				if (scores.get(i) > scores.get(j)) {
 
 					ordering = scores.get(i);
@@ -98,6 +97,25 @@ public class Algorithms {
 		}
 		return scores;
 
+	}
+
+	public static String sortDNA(List<String> unsortedS) {
+		// TODO Auto-generated method stub
+
+		String shortWord = "";
+
+		for (String word : unsortedS) {
+			for (int i = 0; i < unsortedS.size(); i++) {
+				for (int j = i + 1; j < unsortedS.size(); j++) {
+
+					shortWord = unsortedS.get(i);
+					unsortedS.set(i, unsortedS.get(j));
+					unsortedS.set(j, shortWord);
+
+				}
+			}
+		}
+		return shortWord;
 	}
 
 	// Add other methods here
