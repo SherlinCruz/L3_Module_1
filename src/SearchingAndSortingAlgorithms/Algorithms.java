@@ -51,6 +51,7 @@ public class Algorithms {
 
 	}
 
+	//
 	public static String findLongestWord(List<String> words) {
 		String longest = "";
 
@@ -60,11 +61,11 @@ public class Algorithms {
 
 				longest = word;
 			}
-
 		}
 		return longest;
 	}
 
+	// for each loop: once
 	public static boolean containsSOS(List<String> messages) {
 
 		for (String message : messages) {
@@ -73,7 +74,6 @@ public class Algorithms {
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -83,39 +83,61 @@ public class Algorithms {
 
 		for (int i = 0; i < scores.size(); i++) {
 			for (int j = i + 1; j < scores.size(); j++) {
+
 				if (scores.get(i) > scores.get(j)) {
 
 					ordering = scores.get(i);
-
 					scores.set(i, scores.get(j));
-
 					scores.set(j, ordering);
 
 				}
-
 			}
 		}
 		return scores;
-
 	}
 
-	public static String sortDNA(List<String> unsortedS) {
-		// TODO Auto-generated method stub
+	public static List<String> sortDNA(List<String> unsorted) {
 
 		String shortWord = "";
 
-		for (String word : unsortedS) {
-			for (int i = 0; i < unsortedS.size(); i++) {
-				for (int j = i + 1; j < unsortedS.size(); j++) {
+		for (int i = 0; i < unsorted.size(); i++) {
+			for (int j = i + 1; j < unsorted.size(); j++) {
 
-					shortWord = unsortedS.get(i);
-					unsortedS.set(i, unsortedS.get(j));
-					unsortedS.set(j, shortWord);
+				if (unsorted.get(i).length() > unsorted.get(j).length()) {
+
+					shortWord = unsorted.get(i);
+					unsorted.set(i, unsorted.get(j));
+					unsorted.set(j, shortWord);
 
 				}
+
 			}
 		}
-		return shortWord;
+
+		return unsorted;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+
+		String space = "";
+		
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = i + 1; j < words.size(); j++) {
+				
+				if(words.get(i).compareTo(words.get(j)) > 0) 
+				{
+					space = words.get(j);
+				words.set(j, words.get(i));
+				words.set(i, space);
+	
+				}
+				
+				
+			}
+		}
+
+		return words;
+
 	}
 
 	// Add other methods here
